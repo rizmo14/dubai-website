@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/lib/blogContent";
-import { COMPANY, SERVICES } from "@/lib/data";
+import { COMPANY } from "@/lib/data";
 import Breadcrumb from "@/components/shared/Breadcrumb";
 
 type Props = { params: { slug: string } };
