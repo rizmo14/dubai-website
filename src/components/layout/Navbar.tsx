@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { COMPANY } from "@/lib/data";
 import { useLanguage } from "@/lib/LanguageContext";
+import { trackPhoneClick, trackWhatsAppClick, trackBookNowClick, trackLanguageToggle } from "@/lib/analytics";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled]           = useState(false);
@@ -69,7 +70,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             {/* ── Language Toggle ─────────────────────────────────────────── */}
             <button
-              onClick={toggleLang}
+              onClick={() => { toggleLang(); trackLanguageToggle(lang === "en" ? "ar" : "en"); }}
               className="flex items-center gap-1.5 bg-brand-purple/10 hover:bg-brand-purple/20 text-brand-purple font-semibold px-3 py-2 rounded-lg text-sm transition-colors border border-brand-purple/20"
               aria-label={lang === "en" ? "Switch to Arabic" : "Switch to English"}
             >
@@ -84,6 +85,7 @@ export default function Navbar() {
             {/* Click-to-call */}
             <a
               href={`tel:${COMPANY.phone}`}
+              onClick={trackPhoneClick}
               className="flex items-center gap-1.5 bg-brand-light text-brand-purple font-semibold px-3 py-2 rounded-lg text-sm hover:bg-brand-light-2 transition-colors"
               aria-label="Call SBC Cleaning Services"
             >
@@ -108,6 +110,7 @@ export default function Navbar() {
             {/* Book Now — primary CTA */}
             <Link
               href="/book"
+              onClick={() => trackBookNowClick("navbar")}
               className="hidden sm:inline-flex items-center gap-1.5 bg-brand-pink hover:bg-brand-pink-dark text-white font-bold px-4 py-2 rounded-lg text-sm transition-colors"
             >
               {t("nav.bookNow")}
@@ -118,6 +121,7 @@ export default function Navbar() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
               className="hidden lg:flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white font-semibold px-3 py-2 rounded-lg text-sm transition-colors"
               aria-label="WhatsApp SBC Cleaning"
             >

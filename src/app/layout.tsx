@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: "Professional cleaning services in Dubai. Deep cleaning, office cleaning, villa cleaning and more. Fully licensed & insured.",
     images: [
       {
-        url:    "/images/og-image.jpg",
+        url:    "/og",
         width:  1200,
         height: 630,
         alt:    "SBC Cleaning Services Dubai",
@@ -69,6 +69,7 @@ export const metadata: Metadata = {
     canonical: COMPANY.siteUrl,
     languages: {
       "en-AE": COMPANY.siteUrl,
+      "ar-AE": COMPANY.siteUrl,
     },
   },
   verification: {
@@ -90,8 +91,10 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#7f4793" />
-        {/* hreflang for UAE English */}
+        {/* hreflang for UAE English & Arabic */}
         <link rel="alternate" hrefLang="en-ae" href={COMPANY.siteUrl} />
+        <link rel="alternate" hrefLang="ar-ae" href={COMPANY.siteUrl} />
+        <link rel="alternate" hrefLang="x-default" href={COMPANY.siteUrl} />
         {/* GA4 */}
         {gaMeasurementId && (
           <>

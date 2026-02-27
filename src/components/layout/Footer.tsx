@@ -134,9 +134,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500">
           <p>© {year} {COMPANY.legalName}. All rights reserved.</p>
           <p>
-            <Link href="/contact" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
+            <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             {" · "}
-            <Link href="/contact" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
+            <Link href="/terms" className="hover:text-gray-300 transition-colors">Terms of Service</Link>
           </p>
         </div>
       </div>
