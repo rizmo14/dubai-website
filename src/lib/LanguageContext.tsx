@@ -28,12 +28,10 @@ const translations: Record<string, Record<Lang, string>> = {
   // Hero slides
   "hero.slide1.title":    { en: "Sumanawathi Building\nCleaning Services LLC", ar: "سومناواثي لخدمات\nتنظيف المباني ذ.م.م" },
   "hero.slide1.subtitle": { en: "Dubai's Most Trusted Cleaning Company", ar: "شركة التنظيف الأكثر ثقة في دبي" },
-  "hero.slide2.title":    { en: "Professional\nHome Cleaning", ar: "تنظيف منزلي\nاحترافي" },
-  "hero.slide2.subtitle": { en: "Spotless Results Every Time", ar: "نتائج لا تشوبها شائبة في كل مرة" },
-  "hero.slide3.title":    { en: "Office &\nCommercial Cleaning", ar: "تنظيف المكاتب\nوالمنشآت التجارية" },
-  "hero.slide3.subtitle": { en: "Keep Your Workspace Pristine", ar: "حافظ على مكان عملك نظيفاً" },
-  "hero.slide4.title":    { en: "Deep Cleaning\nSpecialists", ar: "متخصصون في\nالتنظيف العميق" },
-  "hero.slide4.subtitle": { en: "Every Corner, Every Surface", ar: "كل زاوية، كل سطح" },
+  "hero.slide2.title":    { en: "Deep Cleaning\nExperts", ar: "خبراء\nالتنظيف العميق" },
+  "hero.slide2.subtitle": { en: "Sanitize & Refresh Every Corner of Your Home", ar: "عقّم وجدد كل زاوية في منزلك" },
+  "hero.slide3.title":    { en: "Professional\nHome Cleaning", ar: "تنظيف منزلي\nاحترافي" },
+  "hero.slide3.subtitle": { en: "Luxury Apartments Across Dubai, Spotless Every Time", ar: "شقق فاخرة في دبي، نظافة لا تشوبها شائبة" },
   "hero.cta.book":        { en: "Book Now", ar: "احجز الآن" },
   "hero.cta.call":        { en: "Call Us", ar: "اتصل بنا" },
 

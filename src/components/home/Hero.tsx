@@ -12,31 +12,21 @@ const SLIDES = [
     id: 1,
     titleKey: "hero.slide1.title",
     subtitleKey: "hero.slide1.subtitle",
-    image:
-      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&q=75&auto=format&fit=crop",
+    image: "/images/team-skyline.png",
   },
   {
     id: 2,
     titleKey: "hero.slide2.title",
     subtitleKey: "hero.slide2.subtitle",
-    image:
-      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=1400&q=75&auto=format&fit=crop",
+    image: "/images/deep-cleaning.png",
   },
   {
     id: 3,
     titleKey: "hero.slide3.title",
     subtitleKey: "hero.slide3.subtitle",
-    image:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=75&auto=format&fit=crop",
+    image: "/images/apartment-cleaning.png",
   },
-  {
-    id: 4,
-    titleKey: "hero.slide4.title",
-    subtitleKey: "hero.slide4.subtitle",
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=75&auto=format&fit=crop",
-  },
-];
+] as const;
 
 const SLIDE_INTERVAL = 5000;
 
