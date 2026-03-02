@@ -97,7 +97,7 @@ export async function GET() {
             color: "rgba(255,255,255,0.7)",
           }}
         >
-          +971 52 133 7528 · sbcservicesuae.com
+          +971 52 133 7528 · sbccleaningservices.ae
         </div>
       </div>
     ),

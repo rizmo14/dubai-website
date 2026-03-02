@@ -12,19 +12,19 @@ const SLIDES = [
     id: 1,
     titleKey: "hero.slide1.title",
     subtitleKey: "hero.slide1.subtitle",
-    image: "/images/team-skyline.png",
+    image: "/images/team-skyline.jpg",
   },
   {
     id: 2,
     titleKey: "hero.slide2.title",
     subtitleKey: "hero.slide2.subtitle",
-    image: "/images/deep-cleaning.png",
+    image: "/images/deep-cleaning.jpg",
   },
   {
     id: 3,
     titleKey: "hero.slide3.title",
     subtitleKey: "hero.slide3.subtitle",
-    image: "/images/apartment-cleaning.png",
+    image: "/images/apartment-cleaning.jpg",
   },
 ] as const;
 
