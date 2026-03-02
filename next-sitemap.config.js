@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://sbcservicesuae.com",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://sbccleaningservices.ae",
   generateRobotsTxt: true,
   changefreq: "weekly",
   priority: 0.7,

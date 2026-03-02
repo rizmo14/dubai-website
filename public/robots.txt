@@ -3,9 +3,10 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
+Disallow: /og
 
 # Host
-Host: https://sbcservicesuae.com
+Host: https://sbccleaningservices.ae
 
 # Sitemaps
-Sitemap: https://sbcservicesuae.com/sitemap.xml
+Sitemap: https://sbccleaningservices.ae/sitemap.xml
