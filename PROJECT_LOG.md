@@ -118,11 +118,16 @@ A fully responsive, bilingual (English/Arabic) website for a Dubai-based profess
 - Regenerated `sitemap.xml` and `sitemap-0.xml` with correct domain URLs
 - Updated `robots.txt` with new domain host and sitemap URL
 
-### 8. Google Search Console Setup (In Progress)
+### 8. Google Search Console Setup (Completed)
 - Added Google Search Console verification TXT record to Vercel DNS:
   - Record type: TXT
   - Value: `google-site-verification=ajbScyhxq19AlJkVtDsyH3lV8oFz-9DF25yc5_tb`
-- DNS record created successfully — awaiting Google verification propagation
+- DNS TXT verification was slow for `.ae` TLD — switched to **URL prefix** method
+- Created HTML verification file (`public/googledfb4366bc9e760c5.html`) and deployed to Vercel
+- **Ownership verified successfully** via HTML file method
+- Submitted sitemap (`sitemap.xml`) to Google Search Console
+- Google now crawling all 27 pages of the site
+- Expect pages to appear in Google search results within 1-2 weeks
 
 ---
 
@@ -180,6 +185,8 @@ sbccleaningservices.ae/
 ## Git Commit History
 
 ```
+d62bf6a Add Google Search Console verification file
+b5e7206 Add detailed project log documenting all milestones and achievements
 c3a98a6 Update sitemap and robots.txt to new sbccleaningservices.ae domain
 6522271 Optimize images: convert PNGs to JPGs (80% size reduction) and update domain
 55f426d Retry Vercel deployment
@@ -195,16 +202,33 @@ f506efe Fix: remove unused SERVICES import in blog post page
 
 ---
 
+## Completed Checklist
+
+- [x] Build responsive bilingual website (EN/AR)
+- [x] Create 6 service pages with SEO metadata
+- [x] Create 5 location pages targeting Dubai areas
+- [x] Write 6 SEO blog posts
+- [x] Add Schema.org structured data
+- [x] Integrate Google Analytics 4
+- [x] Replace stock images with branded AI-generated images
+- [x] Deploy to Vercel with GitHub auto-deploy
+- [x] Purchase sbccleaningservices.ae domain
+- [x] Configure DNS and SSL
+- [x] Optimize images (PNG → JPG, 80% size reduction)
+- [x] Improve Lighthouse Performance (81 → 91)
+- [x] Update sitemap and robots.txt to new domain
+- [x] Verify Google Search Console ownership
+- [x] Submit sitemap to Google for indexing
+
 ## Pending / Next Steps
 
-- [ ] **Google Search Console verification** — TXT record added, awaiting DNS propagation for Google to verify. Can also try URL prefix method with HTML meta tag as alternative.
-- [ ] **Submit sitemap to Google** — Once Search Console is verified, submit `https://sbccleaningservices.ae/sitemap.xml`
 - [ ] **Google My Business** — Set up GMB listing for local search visibility in Dubai
 - [ ] **WhatsApp chatbot** — Research and integrate automated WhatsApp chatbot for customer inquiries
 - [ ] **Hero carousel optimization** — Consider converting CSS `backgroundImage` to Next.js `<Image>` component for better performance (currently the only images not using Next.js optimization)
 - [ ] **Email setup** — Configure business email (e.g., info@sbccleaningservices.ae) via domain email provider
 - [ ] **Monitoring** — Set up uptime monitoring and error tracking
 - [ ] **Content updates** — Regular blog posts for ongoing SEO improvement
+- [ ] **DNS TXT verification** — Retry Google Search Console domain-level verification once `.ae` TXT record fully propagates (currently verified via URL prefix method)
 
 ---
 
