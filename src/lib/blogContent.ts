@@ -7,6 +7,8 @@ export type BlogPost = {
   readTime: string;
   metaTitle: string;
   metaDesc:  string;
+  featuredImage: string;
+  featuredImageAlt: string;
   content:   string[];
 };
 
@@ -20,6 +22,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "5 min read",
     metaTitle: "How Much Does Cleaning Cost in Dubai? 2024 Price Guide | SBC",
     metaDesc:  "Complete guide to cleaning service prices in Dubai. Studio to villa pricing, deep cleaning costs, and office cleaning rates. Updated for 2024.",
+    featuredImage: "/images/apartment-cleaning.jpg",
+    featuredImageAlt: "Professional apartment cleaning service in Dubai",
     content: [
       "Understanding cleaning costs in Dubai is essential whether you're a tenant, homeowner, or business manager. Prices vary based on property size, cleaning type, and frequency.",
       "For a studio apartment, expect to pay between AED 150-250 for a standard clean. One-bedroom apartments typically range from AED 200-350, while two-bedroom units cost AED 300-500. Larger properties like 3-bedroom villas can range from AED 500-1000 depending on the scope of work.",
@@ -39,6 +43,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "4 min read",
     metaTitle: "How to Choose the Best Cleaning Company in Dubai | SBC Guide",
     metaDesc:  "Expert guide to choosing a reliable cleaning company in Dubai. What to check, questions to ask, and red flags to avoid. Make the right choice.",
+    featuredImage: "/images/team-skyline.jpg",
+    featuredImageAlt: "SBC professional cleaning team in Dubai",
     content: [
       "Choosing the right cleaning company in Dubai can feel overwhelming with so many options available. Here are the key factors to consider before making your decision.",
       "First, always verify licensing. In Dubai, legitimate cleaning companies must hold a valid trade license issued by the Department of Economic Development (DED). Ask to see it — reputable companies will be happy to share.",
@@ -58,6 +64,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "3 min read",
     metaTitle: "Deep Cleaning Before Ramadan in Dubai | Preparation Guide | SBC",
     metaDesc:  "Why deep cleaning before Ramadan matters in Dubai. Traditional preparation tips and how professional cleaning helps you start the holy month right.",
+    featuredImage: "/images/deep-cleaning.jpg",
+    featuredImageAlt: "Deep cleaning services for Ramadan preparation in Dubai",
     content: [
       "Pre-Ramadan deep cleaning is a cherished tradition across Dubai households. It represents a fresh start and creates a welcoming environment for the holy month of gatherings, prayers, and family time.",
       "During Ramadan, Dubai families host frequent gatherings for Iftar and Suhoor. A thoroughly cleaned home ensures you can focus on what matters — hosting loved ones, prayer, and reflection — without worrying about the state of your home.",
@@ -76,6 +84,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "6 min read",
     metaTitle: "Move-Out Cleaning Dubai | Get Your Deposit Back | SBC Guide",
     metaDesc:  "Complete guide to move-out cleaning in Dubai. What landlords check, RERA requirements, and how to get your full security deposit back.",
+    featuredImage: "/images/apartment-cleaning.jpg",
+    featuredImageAlt: "Move-out cleaning for Dubai apartment handover",
     content: [
       "Moving out of a rental property in Dubai? Getting your security deposit back depends heavily on the condition you leave the property in. A professional move-out clean is your best investment.",
       "Dubai landlords and property management companies conduct thorough inspections before returning deposits. They check for cleanliness, damage, and general wear. While normal wear and tear is expected, poor cleanliness is a common reason for deposit deductions.",
@@ -95,6 +105,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "5 min read",
     metaTitle: "Office Cleaning Dubai Guide for Businesses | SBC Commercial",
     metaDesc:  "Complete guide to office cleaning in Dubai. Frequency recommendations, what to include, and how to choose a commercial cleaning company.",
+    featuredImage: "/images/team-skyline.jpg",
+    featuredImageAlt: "Professional office cleaning team in Dubai",
     content: [
       "A clean office is more than just aesthetics — it directly impacts employee productivity, health, and your company's professional image. In Dubai's competitive business environment, maintaining a spotless workspace is essential.",
       "The recommended cleaning frequency depends on your office size and foot traffic. Small offices (under 1,000 sq ft) typically need cleaning 2-3 times per week. Medium offices benefit from daily cleaning, while large commercial spaces may need multiple cleaning shifts per day.",
@@ -114,6 +126,8 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: "4 min read",
     metaTitle: "How Often to Clean Your Sofa in Dubai | Expert Guide | SBC",
     metaDesc:  "Expert guide on sofa cleaning frequency for Dubai homes. Signs your sofa needs cleaning, what to expect, and why Dubai's climate demands more frequent care.",
+    featuredImage: "/images/sofa-carpet-cleaning.jpg",
+    featuredImageAlt: "Professional sofa and carpet cleaning in Dubai",
     content: [
       "In Dubai's desert climate, sofas accumulate dust, sand particles, and allergens much faster than in other climates. Regular professional cleaning is essential for hygiene and extending your furniture's lifespan.",
       "For most Dubai households, professional sofa cleaning every 6-8 months is recommended. However, if you have children, pets, or if household members suffer from allergies, every 3-4 months is more appropriate.",

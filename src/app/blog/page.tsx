@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { COMPANY, SERVICES } from "@/lib/data";
 import { BLOG_POSTS } from "@/lib/blogContent";
 import Breadcrumb from "@/components/shared/Breadcrumb";
@@ -39,9 +40,14 @@ export default function BlogPage() {
                 className="block"
               >
                 <article className="bg-white rounded-2xl border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all group h-full flex flex-col">
-                  {/* Placeholder image */}
-                  <div className="h-48 bg-hero-gradient flex items-center justify-center text-white text-4xl">
-                    🧹
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.featuredImage}
+                      alt={post.featuredImageAlt}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
                   </div>
                   <div className="p-6 flex flex-col flex-1">
                     <div className="flex items-center gap-2 mb-3">

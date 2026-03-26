@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LOCATIONS, SERVICES, COMPANY } from "@/lib/data";
+import { LOCATION_CONTENT } from "@/lib/locationContent";
 import LocationHero from "@/components/locations/LocationHero";
 import ServiceCTA   from "@/components/services/ServiceCTA";
-import { BreadcrumbSchema, ServiceSchema } from "@/components/shared/SchemaMarkup";
+import ServiceFAQ   from "@/components/services/ServiceFAQ";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/shared/SchemaMarkup";
 
 const loc = LOCATIONS.find((l) => l.slug === "cleaning-services-downtown-dubai")!;
+const content = LOCATION_CONTENT["cleaning-services-downtown-dubai"];
 
 export const metadata: Metadata = {
   title:       loc.metaTitle,
@@ -19,6 +22,7 @@ export default function DowntownCleaningPage() {
     <>
       <BreadcrumbSchema items={[{ name: "Locations", url: `${COMPANY.siteUrl}/locations` }, { name: `Cleaning Services ${loc.name}`, url: `${COMPANY.siteUrl}/locations/${loc.slug}` }]} />
       <ServiceSchema name={`Cleaning Services in ${loc.name}`} description={loc.description} url={`${COMPANY.siteUrl}/locations/${loc.slug}`} priceRange="AED 200 – AED 2,000" />
+      <FAQSchema faqs={content.faqs} />
 
       <LocationHero locationName={loc.name} description={loc.description} breadcrumb={[{ label: "Locations", href: "/locations" }, { label: loc.name }]} />
 
@@ -26,11 +30,29 @@ export default function DowntownCleaningPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-2xl font-bold text-brand-dark">Premium Cleaning Services in Downtown Dubai</h2>
-              <p className="text-brand-gray leading-relaxed">Downtown Dubai is home to some of the world&apos;s most iconic architecture — Burj Khalifa, The Dubai Mall, the Dubai Fountain, and the Opera District. The residential properties here, from The Address Residences to Boulevard Crescent and Burj Vista, represent the pinnacle of luxury Dubai living. SBC Cleaning Services provides premium cleaning for Downtown Dubai&apos;s discerning residents.</p>
-              <p className="text-brand-gray leading-relaxed">Cleaning luxury apartments and penthouses in Downtown Dubai requires not only technical cleaning expertise but also an understanding of high-end furnishings, delicate surfaces, art, and designer interiors. Our Downtown Dubai cleaning teams are trained in the specific care requirements of luxury properties, using appropriate products and techniques for marble, natural stone, hardwood flooring, and premium upholstery.</p>
-              <p className="text-brand-gray leading-relaxed">Many Downtown Dubai residents are internationally mobile — spending weeks or months abroad and returning to properties that have accumulated dust in their absence. We offer empty-property maintenance cleaning contracts, ensuring your Downtown Dubai apartment is always ready for your return.</p>
-              <p className="text-brand-gray leading-relaxed">Sofa and carpet cleaning is particularly popular in Downtown Dubai&apos;s luxury properties. High-specification interiors with bespoke furnishings and premium flooring benefit enormously from specialist professional cleaning. Our technicians assess each piece individually to apply the safest and most effective treatment.</p>
+              <h2 className="text-2xl font-bold text-brand-dark">{content.heading}</h2>
+              <p className="text-brand-gray leading-relaxed">{content.intro}</p>
+              {content.body.map((paragraph, i) => (
+                <p key={i} className="text-brand-gray leading-relaxed">{paragraph}</p>
+              ))}
+
+              <div className="bg-brand-light rounded-2xl p-6">
+                <h3 className="font-bold text-brand-dark mb-4">Property Types We Clean</h3>
+                <div className="flex flex-wrap gap-2">
+                  {content.propertyTypes.map((pt) => (
+                    <span key={pt} className="bg-white text-brand-gray text-sm px-3 py-1.5 rounded-full border border-gray-100">{pt}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-brand-light rounded-2xl p-6">
+                <h3 className="font-bold text-brand-dark mb-4">Key Buildings & Developments</h3>
+                <div className="flex flex-wrap gap-2">
+                  {content.keyAreas.map((area) => (
+                    <span key={area} className="bg-white text-brand-gray text-sm px-3 py-1.5 rounded-full border border-gray-100">{area}</span>
+                  ))}
+                </div>
+              </div>
 
               <div className="bg-brand-light rounded-2xl p-6">
                 <h3 className="font-bold text-brand-dark mb-4">Iconic Downtown Landmarks Nearby</h3>
@@ -53,6 +75,7 @@ export default function DowntownCleaningPage() {
               </div>
               <div className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm text-center">
                 <p className="font-bold text-brand-dark mb-2">Book Cleaning in Downtown Dubai</p>
+                <p className="text-brand-gray text-sm mb-4">Same-day available · Free quotes</p>
                 <a href={`tel:${COMPANY.phone}`} className="block w-full bg-brand-pink hover:bg-brand-pink-dark text-white font-semibold py-3 rounded-xl transition-colors text-sm mb-2">Call {COMPANY.phoneDisplay}</a>
                 <a href={`https://wa.me/${COMPANY.whatsapp.replace(/\+/g, "")}?text=${encodeURIComponent(`Hi, I need cleaning in Downtown Dubai`)}`} target="_blank" rel="noopener noreferrer" className="block w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition-colors text-sm">WhatsApp Us</a>
               </div>
@@ -61,6 +84,7 @@ export default function DowntownCleaningPage() {
         </div>
       </section>
 
+      <ServiceFAQ faqs={content.faqs} serviceTitle={`Cleaning Services in ${loc.name}`} />
       <ServiceCTA serviceName={`Cleaning Services in ${loc.name}`} />
     </>
   );

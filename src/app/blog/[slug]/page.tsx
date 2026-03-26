@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { BLOG_POSTS } from "@/lib/blogContent";
 import { COMPANY } from "@/lib/data";
@@ -25,6 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url:         `${COMPANY.siteUrl}/blog/${post.slug}`,
       type:        "article",
       publishedTime: post.date,
+      images: [{
+        url: post.featuredImage,
+        width: 1200,
+        height: 630,
+        alt: post.featuredImageAlt,
+      }],
     },
   };
 }
@@ -39,6 +46,7 @@ export default function BlogPostPage({ params }: Props) {
     "@type": "Article",
     headline: post.title,
     description: post.excerpt,
+    image: `${COMPANY.siteUrl}${post.featuredImage}`,
     datePublished: post.date,
     author: {
       "@type": "Organization",
@@ -93,6 +101,20 @@ export default function BlogPostPage({ params }: Props) {
           <p className="text-white/85 text-lg max-w-2xl">{post.excerpt}</p>
         </div>
       </section>
+
+      {/* Featured Image */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-10">
+        <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
+          <Image
+            src={post.featuredImage}
+            alt={post.featuredImageAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 768px"
+            priority
+          />
+        </div>
+      </div>
 
       {/* Article Content */}
       <section className="py-16 bg-white">

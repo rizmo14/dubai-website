@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { LOCATIONS, SERVICES, COMPANY } from "@/lib/data";
+import { LOCATION_CONTENT } from "@/lib/locationContent";
 import LocationHero from "@/components/locations/LocationHero";
 import ServiceCTA   from "@/components/services/ServiceCTA";
-import { BreadcrumbSchema, ServiceSchema } from "@/components/shared/SchemaMarkup";
+import ServiceFAQ   from "@/components/services/ServiceFAQ";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/shared/SchemaMarkup";
 
 const loc = LOCATIONS.find((l) => l.slug === "cleaning-services-jlt-dubai")!;
+const content = LOCATION_CONTENT["cleaning-services-jlt-dubai"];
 
 export const metadata: Metadata = {
   title:       loc.metaTitle,
@@ -19,6 +22,7 @@ export default function JLTCleaningPage() {
     <>
       <BreadcrumbSchema items={[{ name: "Locations", url: `${COMPANY.siteUrl}/locations` }, { name: `Cleaning Services ${loc.name}`, url: `${COMPANY.siteUrl}/locations/${loc.slug}` }]} />
       <ServiceSchema name={`Cleaning Services in ${loc.name}`} description={loc.description} url={`${COMPANY.siteUrl}/locations/${loc.slug}`} priceRange="AED 200 – AED 2,000" />
+      <FAQSchema faqs={content.faqs} />
 
       <LocationHero locationName={loc.name} description={loc.description} breadcrumb={[{ label: "Locations", href: "/locations" }, { label: loc.name }]} />
 
@@ -26,11 +30,29 @@ export default function JLTCleaningPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-6">
-              <h2 className="text-2xl font-bold text-brand-dark">Professional Cleaning Services in JLT Dubai</h2>
-              <p className="text-brand-gray leading-relaxed">Jumeirah Lake Towers (JLT) is a vibrant mixed-use community within the DMCC Free Zone, comprising 80 towers across 26 clusters arranged around three artificial lakes. With a dense mix of residential apartments, corporate offices, retail outlets, restaurants, and hospitality venues, JLT requires cleaning professionals who understand the unique demands of this community.</p>
-              <p className="text-brand-gray leading-relaxed">SBC Cleaning Services provides residential and commercial cleaning throughout all JLT clusters — from Cluster A to Cluster Z. Whether you live in Bonnington Tower, Goldcrest Views, Platinum Tower, or any of the community&apos;s residential buildings, our teams are experienced in navigating JLT building access and delivering consistent, high-quality results.</p>
-              <p className="text-brand-gray leading-relaxed">For JLT businesses — from small DMCC-registered offices to large corporate floor spaces — we offer daily, weekly, and monthly commercial cleaning contracts. Our office cleaning teams in JLT work around your business hours, typically early morning or evening, to avoid interruption to your operations.</p>
-              <p className="text-brand-gray leading-relaxed">Sofa and carpet cleaning is another popular service among JLT residents. Dubai&apos;s dust levels, combined with JLT&apos;s lake-adjacent microclimate, means upholstery and carpets require regular professional cleaning. Our specialist steam-cleaning teams serve all JLT towers with flexible scheduling.</p>
+              <h2 className="text-2xl font-bold text-brand-dark">{content.heading}</h2>
+              <p className="text-brand-gray leading-relaxed">{content.intro}</p>
+              {content.body.map((paragraph, i) => (
+                <p key={i} className="text-brand-gray leading-relaxed">{paragraph}</p>
+              ))}
+
+              <div className="bg-brand-light rounded-2xl p-6">
+                <h3 className="font-bold text-brand-dark mb-4">Property Types We Clean</h3>
+                <div className="flex flex-wrap gap-2">
+                  {content.propertyTypes.map((pt) => (
+                    <span key={pt} className="bg-white text-brand-gray text-sm px-3 py-1.5 rounded-full border border-gray-100">{pt}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-brand-light rounded-2xl p-6">
+                <h3 className="font-bold text-brand-dark mb-4">Key Buildings & Areas We Cover</h3>
+                <div className="flex flex-wrap gap-2">
+                  {content.keyAreas.map((area) => (
+                    <span key={area} className="bg-white text-brand-gray text-sm px-3 py-1.5 rounded-full border border-gray-100">{area}</span>
+                  ))}
+                </div>
+              </div>
 
               <div className="bg-brand-light rounded-2xl p-6">
                 <h3 className="font-bold text-brand-dark mb-4">Nearby Areas & Landmarks</h3>
@@ -62,6 +84,7 @@ export default function JLTCleaningPage() {
         </div>
       </section>
 
+      <ServiceFAQ faqs={content.faqs} serviceTitle={`Cleaning Services in ${loc.name}`} />
       <ServiceCTA serviceName={`Cleaning Services in ${loc.name}`} />
     </>
   );
