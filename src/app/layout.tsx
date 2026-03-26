@@ -67,10 +67,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: COMPANY.siteUrl,
-    languages: {
-      "en-AE": COMPANY.siteUrl,
-      "ar-AE": COMPANY.siteUrl,
-    },
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "",
@@ -91,10 +87,6 @@ export default function RootLayout({
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#7f4793" />
-        {/* hreflang for UAE English & Arabic */}
-        <link rel="alternate" hrefLang="en-ae" href={COMPANY.siteUrl} />
-        <link rel="alternate" hrefLang="ar-ae" href={COMPANY.siteUrl} />
-        <link rel="alternate" hrefLang="x-default" href={COMPANY.siteUrl} />
         {/* GA4 */}
         {gaMeasurementId && (
           <>
