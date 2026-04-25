@@ -11,7 +11,7 @@ export const COMPANY = {
   phone2Display:"+971 50 675 8217",
   whatsapp:     "+971521337528",
   whatsappMsg:  "Hi, I'm interested in your cleaning services in Dubai",
-  email:        "info@sbcservicesuae.com",
+  email:        "info@sbccleaningservices.ae",
   address: {
     street:  "Dubai",
     city:    "Dubai",

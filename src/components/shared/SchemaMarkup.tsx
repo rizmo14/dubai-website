@@ -153,25 +153,3 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
   );
 }
 
-// ─── Review / Aggregate Rating ────────────────────────────────────────────────
-export function ReviewSchema() {
-  const schema = {
-    "@context":      "https://schema.org",
-    "@type":         "LocalBusiness",
-    name:            COMPANY.name,
-    aggregateRating: {
-      "@type":       "AggregateRating",
-      ratingValue:   "4.9",
-      reviewCount:   "127",
-      bestRating:    "5",
-      worstRating:   "1",
-    },
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
-}

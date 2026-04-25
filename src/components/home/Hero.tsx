@@ -70,6 +70,7 @@ export default function Hero() {
       dir={dir}
       aria-label="Hero slider"
     >
+      <h1 className="sr-only">Professional Cleaning Services in Dubai — SBC Cleaning Services</h1>
       {/* ── Background slides ─────────────────────────────────────────────── */}
       {SLIDES.map((slide, index) => (
         <div
@@ -116,14 +117,14 @@ export default function Hero() {
                     pointerEvents: index === current ? "auto" : "none",
                   }}
                 >
-                  <h1
+                  <h2
                     className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.05] mb-6 whitespace-pre-line ${
                       lang === "ar" ? "font-arabic" : ""
                     }`}
                     style={{ textShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
                   >
                     {t(slide.titleKey)}
-                  </h1>
+                  </h2>
                   <p
                     className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 font-medium mb-8 max-w-2xl"
                     style={{ textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}

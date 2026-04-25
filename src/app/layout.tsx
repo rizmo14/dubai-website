@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(COMPANY.siteUrl),
   title: {
     default:  "SBC Cleaning Services Dubai | Professional Cleaning Company UAE",
-    template: "%s | SBC Cleaning Services Dubai",
+    template: "%s",
   },
   description:
     "Professional cleaning services in Dubai — deep cleaning, office cleaning, villa cleaning, sofa & carpet cleaning. Fully licensed & insured. Call +971 52 133 7528.",

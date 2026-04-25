@@ -6,7 +6,6 @@ import Testimonials     from "@/components/home/Testimonials";
 import {
   LocalBusinessSchema,
   FAQSchema,
-  ReviewSchema,
 } from "@/components/shared/SchemaMarkup";
 import { SERVICES, TESTIMONIALS, HOME_FAQS, COMPANY } from "@/lib/data";
 
@@ -27,7 +26,6 @@ export default function HomePage() {
       {/* JSON-LD structured data */}
       <LocalBusinessSchema />
       <FAQSchema faqs={HOME_FAQS} />
-      <ReviewSchema />
 
       {/* Page sections */}
       <Hero />
